@@ -4,13 +4,12 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-@Component
+//@Component
 public class MyUserDetailsService2 implements UserDetailsService {
 
     private List<UserObject> users = new ArrayList();
@@ -28,7 +27,7 @@ public class MyUserDetailsService2 implements UserDetailsService {
                 .filter(u -> u.name.equals(userName))
                 .findAny();
         if (!user.isPresent()) {
-            throw new UsernameNotFoundException("User not found by name: " + userName);
+            throw new UsernameNotFoundException("Account not found by name: " + userName);
         }
         return toUserDetails(user.get());
     }

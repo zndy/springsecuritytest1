@@ -1,0 +1,2 @@
+INSERT INTO ACCOUNT (id, username, password, role) VALUES(1, 'user1', '$2a$10$TkEUwNcmzltJZSFmMpIWLuTaCbnNYScwgR17aMb02PL1TqsTl26g2', 'USER')
+INSERT INTO ACCOUNT (id, username, password, role) VALUES(2, 'user2', '$2a$10$6Cj8Ad4co61ini1hix1BPOoN01KPVP5.WrO.DspH/Z..jQOw1urWm', 'ADMIN')
