@@ -1,5 +1,6 @@
 package my.test.configuration;
 
+import my.test.service.MyUserDetailsService;
 import my.test.service.MyUserDetailsService3;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -24,7 +25,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
             .authorizeRequests()
                 .antMatchers("/", "/home").permitAll()
                 .antMatchers("/greeting/**").permitAll()
-//                .anyRequest().authenticated() //unnecessary, no effect
+                .anyRequest().authenticated()
                 .and()
             .formLogin()
                 .loginPage("/login")

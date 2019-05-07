@@ -4,6 +4,7 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Component;
 
 //@Component
 public class MyUserDetailsService implements UserDetailsService {
@@ -11,9 +12,9 @@ public class MyUserDetailsService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
         UserDetails user =
-                User.withUsername("user1")
+                User.withUsername("johnny")
 //                        .password(new BCryptPasswordEncoder().encode("password")) //password with bcrypt
-                        .password("$2a$10$RiNzPYRQ4h/bBYbZy7Jbdu9/yk/uAEd0MCfR2DuuZGjmXlDI5fFjm") //spring security bug, BCryptPassword must start with $2a
+                        .password("$2a$10$TkEUwNcmzltJZSFmMpIWLuTaCbnNYScwgR17aMb02PL1TqsTl26g2") //spring security bug, BCryptPassword must start with $2a //123
                         .roles("USER")
                         .build();
         return user;
